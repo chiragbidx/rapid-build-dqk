@@ -13,6 +13,9 @@ import {
 } from "lucide-react";
 
 export default function HomePage() {
+  // Compute year once, preventing dynamic time use in JSX
+  const currentYear = new Date().getFullYear();
+
   // Minimal client state to show loading, error, and results for both copy generators
   // Only enable "use client" for input section relevant to submission
   // In a real production version, these would be split out, but here for atomicity
@@ -375,7 +378,7 @@ export default function HomePage() {
           <div>
             <span className="text-lg font-bold text-orange-500">CopyLift</span>{" "}
             <span className=" ml-1 text-sm text-gray-400 tracking-wide">
-              © {new Date().getFullYear()} Chirag Dodiya. All rights reserved.
+              © {currentYear} Chirag Dodiya. All rights reserved.
             </span>
           </div>
 
